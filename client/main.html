@@ -1,0 +1,48 @@
+<!-- 
+	
+	# Step 2
+	  Replace the word SDK with the name of your package.
+	  Then, open ./client/main.js
+
+ -->
+
+<template name="MeteorToys_debug">
+	{{#if KadiraDebugPresent}}
+		{{> MeteorToys_debug_toggle}}
+	{{else}}
+		{{#MeteorToy name="MeteorToys_debug"}}
+			<!-- Start Editable Zone -->
+				{{> MeteorToys_debug_header}}
+				{{> MeteorToys_debug_content}}
+			<!-- End Editable Zone  -->
+		{{/MeteorToy}}
+	{{/if}}
+</template>
+
+<template name="MeteorToys_debug_header">
+	<!-- Note: `MeteorToys-background-overlay1`
+ 		 comes from Meteor Toys ThemeKit -->
+	<div class="MeteorToys_debug_header MeteorToys-background-overlay1">
+		<div class="MeteorToys_debug_button">
+			<a href="https://github.com/kadirahq/meteor-debug" target="_blank">Info</a></div>
+		<strong>Kadira Debug</strong>
+	</div>
+</template>
+
+<template name="MeteorToys_debug_content">
+	<div class="MeteorToys_debug_content">
+		<!-- {{#if alreadyInstalled}} -->
+			<!-- Click <a style="text-decoration: underline;" href="{{debugUrl}}" target="_blank">here</a> to Start a Debug Session. -->
+		<!-- {{else}} -->
+			Run `meteor add kadira:debug`<br>
+			to install the Kadira Debug package.
+		<!-- {{/if}} -->
+	</div>
+</template>
+
+<template name="MeteorToys_debug_toggle">
+	<div class="MeteorToys_orb MeteorToys_button MeteorToys_orb_condensed" id="MeteorToys_debug" oncontextmenu="return false;">	
+		<div class="MeteorToys_icon"></div>
+		<div class="MeteorToys_orb_filler_wrapper"></div>
+	</div>
+</template>
